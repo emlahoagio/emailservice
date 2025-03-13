@@ -1,4 +1,17 @@
-/* Header tổng thể */
+/* ==========================
+   Global Styles
+========================== */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* ==========================
+   Header
+========================== */
 .header {
     display: flex;
     justify-content: space-between;
@@ -8,15 +21,12 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Phần logo */
 .logo {
     font-size: 24px;
     font-weight: bold;
     color: #333;
-    font-family: 'Arial', sans-serif;
 }
 
-/* Thanh tìm kiếm */
 .search-container {
     display: flex;
     align-items: center;
@@ -40,35 +50,22 @@
     cursor: pointer;
 }
 
-/* Ẩn thanh tìm kiếm trên mobile */
+/* Hide search bar on mobile */
 @media (max-width: 768px) {
     .search-container {
         display: none;
     }
 }
 
-/* Layout tổng thể */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-}
-
-.content {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Content Wrapper */
+/* ==========================
+   Content Section
+========================== */
 .content-wrapper {
     display: flex;
     justify-content: center;
     padding: 20px;
 }
 
-/* Container chính */
 .content-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -78,7 +75,6 @@ body {
     justify-items: center;
 }
 
-/* Hộp nội dung */
 .content-box {
     width: 100%;
     max-width: 250px;
@@ -90,36 +86,51 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Hình ảnh */
 .content-box img {
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
 }
 
-/* Tiêu đề */
 .content-box h3 {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-/* Nút chọn */
-.select-btn {
-    background-color: red;
+/* ==========================
+   Buttons
+========================== */
+.select-btn,
+.call-btn {
+    display: block;
+    text-align: center;
+    background-color: #007bff;
     color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
+    padding: 15px 0;
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out;
 }
 
-.select-btn:hover {
-    background-color: darkred;
+.select-btn:hover,
+.call-btn:hover {
+    background-color: #0056b3;
 }
 
-/* Responsive */
+/* Remove underline from links */
+a {
+    text-decoration: none;
+}
+
+/* ==========================
+   Responsive Grid Layout
+========================== */
 @media (min-width: 1024px) {
     .content-container {
         grid-template-columns: repeat(4, 1fr);
@@ -144,14 +155,15 @@ body {
     }
 }
 
-/* Footer */
+/* ==========================
+   Footer
+========================== */
 footer {
     background: #222;
     color: white;
     text-align: center;
     padding: 20px 10px;
     margin-top: auto;
-    position: relative;
 }
 
 .footer-container {
@@ -183,37 +195,9 @@ footer {
     font-size: 14px;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-    }
-}
-
-/* Call Button chung */
-.call-btn {
-    display: block;
-    text-align: center;
-    background-color: #007bff;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 15px 0;
-    width: 80%;
-    max-width: 300px;
-    margin: 20px auto;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease-in-out;
-}
-
-/* Hover Effect */
-.call-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Mobile: Nút Call hiển thị dưới Header */
+/* ==========================
+   Call Button Visibility
+========================== */
 @media (max-width: 768px) {
     .call-btn-header {
         display: block;
@@ -224,7 +208,6 @@ footer {
     }
 }
 
-/* Laptop: Nút Call hiển thị trên Footer */
 @media (min-width: 769px) {
     .call-btn-header {
         display: none;
